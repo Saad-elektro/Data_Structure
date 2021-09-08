@@ -18,9 +18,9 @@ int length;
 // Circular Buffer Initialization
 
 CB* Buffer_Init(int* buf, size_t cap){       // The user provides the data buffer --> he can choose Static/Dynamic allocation  
-											// The function returns a pointer to the structure, which allows the user to manipulate the original structure
+						// The function returns a pointer to the structure, which allows the user to manipulate the original structure
 	
-	CB* CB_buffer  = (CB*) malloc (sizeof(CB));  // We allocate dynamically the strcuture
+CB* CB_buffer  = (CB*) malloc (sizeof(CB));  // We allocate dynamically the strcuture
 
 /*	
 	//Static allocation : Instatiate the stucture
@@ -46,7 +46,7 @@ if (BUFFER->head +1 == BUFFER->length|| BUFFER->head == BUFFER->tail + (BUFFER->
 
 
  //if (BUFFER->head+1 == BUFFER->tail || BUFFER->head == BUFFER->tail + (BUFFER->length -1) ) {   // if the head is in the element previous to the tail
-  printf(" BUFFER IS FULL")	;														// if the head is in the last position and the tail is at position 0
+  printf(" BUFFER IS FULL")	;							// if the head is in the last position and the tail is at position 0
   return true;}
 else{
 
@@ -59,7 +59,7 @@ return false;}
 void Push_data(CB* Cbuffer, int item){
 	
 //	 1) Check if the buffer is full  (fct is full)
-	// Check condition of methode 2 (voir resumé)
+	// Check condition of methode 2 (voir resumÃ©)
 	//if ((Cbuffer->count &&  Cbuffer->head) == Cbuffer->tail){
 	
 //	if (is_buffer_full(Cbuffer)==true){
@@ -87,37 +87,9 @@ void Push_data(CB* Cbuffer, int item){
 	 
 	 Cbuffer->head++;
 	 Cbuffer->count++;
-
-	
 	
 	}	
 	
-	
-	
-	/*
-	if (Cbuffer->head==Cbuffer->head + Cbuffer->length-1){ // if (Cbuffer->head+1 == (Cbuffer->head + Cbuffer->length))
-	
-		Cbuffer->head = Cbuffer->tail; // RAZ head (overwrite the oldest value --> where the tail is pointing to
-		printf ("Overflow, Element[%d] [%d] overwrote", Cbuffer->tail ,Cbuffer->buffer[Cbuffer->tail] ); // Print index and the element which is overwrote
-
-		Cbuffer->tail++;
-		Cbuffer->count--;
-	}
-	*/
-/*	
-	
-	else if (Cbuffer->head+1 <= Cbuffer->length){
-	
-	
-	printf("Added element : Element[%d] = %d \r\n", Cbuffer->head, item);
-	Cbuffer->buffer[Cbuffer->head] = item;
-	
-	Cbuffer->head ++;
-	//printf ("The head is pointing to the %d element ", Cbuffer->head);
-	Cbuffer->count++;
-	
-}*/
-
 int Read_out_data (CB* Rbuffer,int* data){
 	
 //int data;
@@ -136,15 +108,6 @@ int Read_out_data (CB* Rbuffer,int* data){
 	}
 		//return data;
 	}
-
-
-/*
-int get_item(CB* Rbuffer){
-	
-	return Rbuffer->buffer[Rbuffer->tail];
-		
-}
-*/
 
 //}
 	
@@ -178,8 +141,8 @@ int main(){
 	Push_data(user_buffer, 4);
 	Push_data(user_buffer, 5);
 	Push_data(user_buffer, 6);
-    Push_data(user_buffer, 1);
-    Push_data(user_buffer, 98);
+        Push_data(user_buffer, 1);
+        Push_data(user_buffer, 98);
 	
 	printf ("the number of element is : %d \r\n", user_buffer->count);
 	
